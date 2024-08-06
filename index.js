@@ -19,6 +19,7 @@ const app = express()
 // app.use(express.static('public'))
 app.use('/uploads', express.static('uploads'))
 app.use(json())
+app.set('view engine', 'pug')
 
 app.post("/",upload.single("upload-file"),(req,res)=>{
    const normalPath = path.normalize(req.file.path)
@@ -27,11 +28,12 @@ app.post("/",upload.single("upload-file"),(req,res)=>{
 // fs.unlink()
     uploadedFiles.push(req.file.path)
     // res.redirect("/")
-    res.send(`download at <a>uploads/${req.file.path}</a>`)
+    res.send(`download at <a>${req.file.path}</a>`)
 })
-app.get("/",(req,res)=>{
-    res.sendFile('');
-})
+app.get('/', function (req, res) {
+    // console.log(req.hostname)
+     res.sendFile(`C:/Users/suraj/OneDrive/Desktop/file-upload-download/public/index.html`)
+});
 
 
 app.listen(3000,()=>{
