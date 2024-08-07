@@ -48,7 +48,7 @@ app.get('/', function (req, res) {
         }
       }
     // console.log(req.hostname)
-     res.sendFile("./index.html",options)
+     res.sendFile(`C:/Users/suraj/OneDrive/Desktop/file-upload-download/public/index.html`)
 });
 
 
