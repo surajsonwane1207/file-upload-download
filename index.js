@@ -32,7 +32,7 @@ app.post("/",upload.single("upload-file"),(req,res)=>{
 })
 app.get('/', function (req, res) {
     // console.log(req.hostname)
-     res.sendFile(`./public/index.html`)
+     res.sendFile("/public/index.html")
 });
 
 
